@@ -11,7 +11,7 @@ const App = () => {
     const [user,setUser] = useState('');
 
   return (
-      <div>
+      <div className='app'>
       <UserContext.Provider value={{user,setUser}}>
       <Navigation />
       <Routes>

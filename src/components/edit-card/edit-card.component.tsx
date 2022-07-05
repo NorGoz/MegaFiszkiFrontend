@@ -1,6 +1,12 @@
 import './edit-card.css';
 
-const EditCardComponent = () => {
+interface Props{
+    polish:string;
+    english:string;
+    id:string;
+}
+
+const EditCardComponent = ({polish,english,id}:Props) => {
     return(
         <div>edit</div>
     )

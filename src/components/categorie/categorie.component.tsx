@@ -1,5 +1,6 @@
 import './categorie.css';
 import {useEffect, useState} from "react";
+import CategorieItemComponent from "../categorie-item/categorie-item.component";
 
 const CategorieComponent = () => {
     const [categories,setCategories] = useState<string[]>([]);
@@ -14,8 +15,8 @@ const CategorieComponent = () => {
     },[])
     console.log(categories)
     return(
-        <div>
-            {categories.length === 0 ? null : categories.map(item => <h2 key={item}>{item}</h2>)}
+        <div className='categorie__container'>
+            {categories.length === 0 ? <h2>Brak kategori</h2> : categories.map(item => <CategorieItemComponent key={item} title={item}/>)}
         </div>
     )
 }
