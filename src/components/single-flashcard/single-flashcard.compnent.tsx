@@ -1,5 +1,5 @@
 import './single-flashcard.css';
-import {useState} from "react";
+import {useContext, useState} from "react";
 
 
 import {faChevronLeft} from '@fortawesome/free-solid-svg-icons';
@@ -7,6 +7,7 @@ import {faChevronRight} from '@fortawesome/free-solid-svg-icons';
 import {faUserCog} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import EditCardComponent from "../edit-card/edit-card.component";
+import {UserContext} from "../../context/user.context";
 
 type Props ={
     card: {
@@ -18,12 +19,15 @@ type Props ={
     };
     flashcardsIndex: number;
     changeFlashcardIndex: any;
+    flashcardsLength: number;
 }
 
-const SingleFlashcardCompnent = ({card,flashcardsIndex,changeFlashcardIndex}:Props) => {
+const SingleFlashcardCompnent = ({card,flashcardsIndex,changeFlashcardIndex, flashcardsLength}:Props) => {
     const [flipped, setFlipped] = useState(true);
     const [remember, setRemember] = useState(card.remember);
     const [activeLernMode, setActiveLernMode] = useState(true);
+
+    const {user} = useContext(UserContext);
 
     const handleFlip = () => {
         setFlipped(prevValue => !prevValue)
@@ -37,15 +41,15 @@ const SingleFlashcardCompnent = ({card,flashcardsIndex,changeFlashcardIndex}:Pro
         setRemember(prevValue => !prevValue);
     }
 
+
     if (activeLernMode) {
     return (
         <div className='card'>
             <div className={flipped ? 'flipped' : ''}>
                 <div className='englishCard front'>
                     <div className='card__info'>
-                        <span style={{cursor: 'pointer'}} onClick={()=>setActiveLernMode(false)}>{gearElement}</span>
-                        {/*tu mam dostep do id przezp props/ edit cos z idi  nav link*/}
-                        <span>{flashcardsIndex}</span>
+                        {user === '' ? null :<span style={{cursor: 'pointer'}} onClick={()=>setActiveLernMode(false)}>{gearElement}</span>}
+                        <span>{flashcardsIndex+1}/{flashcardsLength}</span>
                         <label>Pamiętam <input type="checkbox" checked={remember} onChange={handleRemember}/></label>
                     </div>
                     <h2 className='card__txt' onClick={handleFlip}>{card.english}</h2>
@@ -56,9 +60,8 @@ const SingleFlashcardCompnent = ({card,flashcardsIndex,changeFlashcardIndex}:Pro
                 </div>
                 <div className='polishCard back'>
                     <div className='card__info'>
-                        <span style={{cursor: 'pointer'}} onClick={()=>setActiveLernMode(false)}>{gearElement}</span>
-                        {/*tu mam dostep do id przezp props/ edit cos z idi  nav link*/}
-                        <span>{flashcardsIndex}</span>
+                        {user === '' ? null :<span style={{cursor: 'pointer'}} onClick={()=>setActiveLernMode(false)}>{gearElement}</span>}
+                        <span>{flashcardsIndex+1}/{flashcardsLength}</span>
                         <label>Pamiętam <input type="checkbox" checked={remember} onChange={handleRemember}/></label>
                     </div>
                     <h2 className='card__txt' onClick={handleFlip}>{card.polish}</h2>
@@ -71,7 +74,7 @@ const SingleFlashcardCompnent = ({card,flashcardsIndex,changeFlashcardIndex}:Pro
         </div>
     )
     } else return (
-        <EditCardComponent polish={card.polish} english={card.english} id={card.id}/>
+        <EditCardComponent polishWord={card.polish} englishWord={card.english} id={card.id} categorie={card.category}/>
     )
 };
 

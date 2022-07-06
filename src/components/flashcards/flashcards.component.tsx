@@ -37,7 +37,7 @@ const FlashcardsComponent = () => {
     console.log(categories)
 
     const mapedFlashcards =  flashcards.map(card => (
-        <SingleFlashcardCompnent key={card.id} card={card} flashcardsIndex={flashcardsIndex} changeFlashcardIndex={changeFlashcardIndex}/>
+        <SingleFlashcardCompnent key={card.id} card={card} flashcardsIndex={flashcardsIndex} changeFlashcardIndex={changeFlashcardIndex} flashcardsLength={flashcards.length}/>
     ))
     console.log(flashcards)
     if(flashcards.length > 0){
