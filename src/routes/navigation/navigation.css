@@ -30,3 +30,9 @@ a.active{
     color: white;
     border-bottom: 3px solid white;
 }
+
+.nav__user{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}

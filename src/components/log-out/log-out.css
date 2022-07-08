@@ -1,0 +1,22 @@
+.logOut__container{
+    width: 10%;
+    margin: 100px auto;
+}
+
+.logOut__btn{
+    text-decoration: none;
+    width: 200px;
+    font-weight: bold;
+    margin: 10px;
+    border: solid 2px black;
+    color: black;
+    background-color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: 0.3s;
+}
+.logOut__btn:hover{
+    color: white;
+    border: white solid 2px;
+    background-color: black;
+}

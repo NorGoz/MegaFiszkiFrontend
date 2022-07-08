@@ -10,7 +10,7 @@ const Authentication = () => {
 
 
     return(
-        <div>
+        <div className='auth__container'>
             {user === '' ? <SignInComponent/> : <LogOutComponent/>}
         </div>
     )

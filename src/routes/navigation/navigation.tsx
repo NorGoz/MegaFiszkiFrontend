@@ -53,7 +53,7 @@ const Navigation = () => {
                         {menuForAdmin}
                     </ul>
                 </nav>
-        <h2>{`Użytkownik: ${user}`}</h2>
+        <h2 className='nav__user'>{`Użytkownik: ${user}`}</h2>
             </div>
         )} else return (
             <div>MAmy problem z nawigacja</div>

@@ -1,0 +1,36 @@
+.signIn__container{
+    width: 40%;
+    margin: 100px auto;
+    border: 1px solid black;
+}
+
+.signIn__form{
+    padding: 10px;
+    text-align: center;
+}
+
+.signIn__title{
+    margin: 20px;
+    text-transform: uppercase;
+}
+.signIn__txt{
+    padding: 10px;
+}
+
+.signIn__btn{
+    text-decoration: none;
+    width: 100px;
+    font-weight: bold;
+    margin: 10px;
+    border: solid 2px black;
+    color: black;
+    background-color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: 0.3s;
+}
+.signIn__btn:hover{
+    color: white;
+    border: white solid 2px;
+    background-color: black;
+}

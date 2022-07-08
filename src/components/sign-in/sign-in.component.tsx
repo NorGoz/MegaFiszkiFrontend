@@ -31,10 +31,10 @@ const SignInComponent = () => {
 
 
     return(
-        <div>
-            <form action="" onSubmit={signIn}>
-                <h1>Logowanie</h1>
-                <p>
+        <div className='signIn__container'>
+            <form className='signIn__form' action="" onSubmit={signIn}>
+                <h1 className='signIn__title'>Logowanie</h1>
+                <p className='signIn__txt'>
                     <label>
                         Login: <br/>
                         <input
@@ -46,7 +46,7 @@ const SignInComponent = () => {
                         />
                     </label>
                 </p>
-                <p>
+                <p className='signIn__txt'>
                     <label>
                         Hasło: <br/>
                         <input
@@ -58,7 +58,7 @@ const SignInComponent = () => {
                         />
                     </label>
                 </p>
-                <button type="submit">Zaloguj</button>
+                <button className='signIn__btn' type="submit">Zaloguj</button>
             </form>
         </div>
     )
