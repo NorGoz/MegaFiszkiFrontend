@@ -1,3 +1,12 @@
+# MegaFiszkiFrontend
+This project was to repeat the logic in react and work with the backend.\
+The interface will be modernized along with adding new functionalities.\
+I use this app to learn new words.\
+
+# MegaFiszkiFrontend DEMO
+Link: https://youtu.be/g424UmRN9Ck .\
+On yt we can see how the application works, link above
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
